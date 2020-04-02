@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { motion } from 'framer-motion';
 import TextLink from './assets/textLink';
 
 import { useInView } from 'react-intersection-observer';
@@ -13,7 +12,7 @@ const variants = {
   }
 };
 
-const FooterStyled = styled(motion.footer)`
+const FooterStyled = styled.footer`
   padding-bottom: 80px;
 
   @media screen and (max-width: 1024px) {
@@ -102,14 +101,14 @@ function Footer() {
   });
 
   return(
-    <FooterStyled data-smooth-item  ref={ref} initial="initial" animate={inView ? 'enter' : ''} exit={{}}>
+    <FooterStyled data-smooth-item  ref={ref}>
       <div className="container row">
         <div className="col-6 col-tablet-5 col-mobile-8">
           <FooterTitle>
-            <motion.div custom={0} variants={variants}>SAY <span className="outline-text">HELLO</span></motion.div>
+            <div>SAY <span className="outline-text">HELLO</span></div>
           </FooterTitle>
           <SocialsWrap>
-            <motion.div custom={1} variants={variants}>
+            <div>
               <TextLink className="footer-link" 
               href="https://www.instagram.com/menberusch/"
               >Instagram</TextLink>
@@ -119,23 +118,23 @@ function Footer() {
               <TextLink className="footer-link"
               href="https://www.linkedin.com/in/vasyl-b/"
               >LinkedIn</TextLink>
-            </motion.div>
+            </div>
           </SocialsWrap>
         </div>
         <div className="col-2 col-tablet-3 col-mobile-8">
           <SmallCaptionText>
-            <motion.div custom={2} variants={variants}>START A PROJECT</motion.div>
+            <div>START A PROJECT</div>
           </SmallCaptionText>
           <div style={{overflow: 'hidden', paddingBottom: 1}}>
-            <motion.div className="footer-link-wrap" custom={3} variants={variants}>
+            <div className="footer-link-wrap">
               <TextLink className="footer-link" href="mailto:vas.bryndas@gmail.com">vas.bryndas@gmail.com</TextLink>
-            </motion.div>
+            </div>
           </div>
             
           <div style={{overflow: 'hidden', paddingBottom: 1}}>
-            <motion.div className="footer-link-wrap" custom={4} variants={variants}>
+            <div className="footer-link-wrap">
               <TextLink className="footer-link" href="tel:+380930292527">(+38) 093 029 25 27</TextLink>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

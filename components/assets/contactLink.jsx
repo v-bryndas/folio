@@ -74,15 +74,10 @@ function ContactLink(props) {
           style={props.style}
         >
       <div className="contact-link-inner">
-        <motion.div 
-          initial="initial"
-          animate="enter"
-          exit="exit"
-          variants={props.variants}
-        >
+        <div>
           <span ref={spanEl}>Get in touch</span>
           <Arrow style={{width: '.7em', marginLeft: 10}} />
-        </motion.div>
+        </div>
       </div>
     </ContactLinkStyled>
   )

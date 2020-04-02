@@ -1,17 +1,8 @@
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 import TextLink from '../assets/textLink'
 import { useInView } from 'react-intersection-observer';
-
-const variants = {
-  initial: { y: '110%' },
-  enter: i => ({ y: 0, transition: { delay: i * 0.1, type: 'spring', mass: 1.5, damping: 100 } }),
-  exit: {
-    y: '100%',
-    transition: { duration: 0.2, ease: [0.48, 0.15, 0.25, 0.96] }
-  }
-};
 
 function SplitLiner(props) {
   const splitLineWrap = React.createRef();
@@ -87,15 +78,15 @@ function SplitLiner(props) {
 
   let content = props.children;
 
-  const InnerWrap = props.innerWrap ? props.innerWrap : motion.div;
+  const InnerWrap = props.innerWrap ? props.innerWrap : div;
 
   if(lineTags.length) {
     content = lineTags.map((line, i) => {
       return(
         <div style={{overflow: 'hidden'}} key={`line${i}`}>
-          <motion.div custom={i} initial="initial" animate={inView ? 'enter' : ''} exit="exit" variants={variants}>
+          <div>
             {line}
-          </motion.div>
+          </div>
         </div>
       )
     });
@@ -105,8 +96,6 @@ function SplitLiner(props) {
     <div ref={ref}>
       <InnerWrap 
         ref={splitLineWrap} 
-        animate={{transition: { delayChildren: 0.5}}}
-        exit={{}}
       >
         {content}
       </InnerWrap>

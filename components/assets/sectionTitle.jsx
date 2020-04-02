@@ -27,15 +27,6 @@ const SectionTitleStyled = styled.h2`
   }
 `
 
-const variants = {
-  initial: { y: '110%' },
-  enter: { y: 0, transition: { type: 'spring', mass: 1.5, damping: 100 } },
-  exit: {
-    y: '100%',
-    transition: { duration: 0.2, ease: [0.48, 0.15, 0.25, 0.96] }
-  }
-}
-
 function SectionTitle(props) {
 
   const [ref, inView] = useInView({
@@ -50,14 +41,10 @@ function SectionTitle(props) {
       className={props.className}
       ref={ref}
     >
-      <motion.span
-        initial="initial"
-        animate={props.variants ? 'enter' : inView ? 'enter' : ''}
-        exit="exit"
-        variants={props.variants || variants}
+      <span
       >
         {props.children}
-      </motion.span>
+      </span>
     </SectionTitleStyled>
   )
 }
