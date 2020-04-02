@@ -1,0 +1,28 @@
+{
+  "name": "reactive-scroll",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "clean": "rm -rf dist/*"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-private-methods": "^7.8.3",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "webpack": "^5.0.0-beta.14",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "bindall-standalone": "^1.0.5",
+    "lethargy": "^1.0.9",
+    "lodash.debounce": "^4.0.8",
+    "object-assign": "^4.1.1",
+    "tiny-emitter": "^2.1.0"
+  }
+}
